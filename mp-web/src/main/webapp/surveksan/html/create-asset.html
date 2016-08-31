@@ -1,0 +1,113 @@
+<style>
+.saveCont{
+    width: 100%;
+    /* height: 100%; */
+    /* background-color: #000000; */
+    opacity: 0.9;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    z-index: 1000;
+}
+.saveHeaderDiv{
+    background-color: #009688;
+    text-align: center;
+    padding: 15px;
+    height: 85px;
+    color: #FFFFFF;
+}
+
+</style>
+<div class="modal saveCont" id="saveDeptModal" style="display: none">
+    <div class="modal-content saveHeaderDiv"><h4>Department Saved Successfully.</h4></div>
+</div>
+	<div style="width:600px;margin:auto;">
+              <div class="col s12 m12 l6">
+                <div class="card-panel">
+                  <h4 class="header2">Create Department</h4>
+                  <div class="row">
+                    <form class="col s12">
+
+                      <div class="row">
+                        <div class="input-field col s12">
+			  <i class="mdi-action-wallet-giftcard prefix"></i>
+                          <input id="dept_name" type="text" class="validate" maxlength="30" minlength="3">
+                          <label for="dept_name">Department Name</label>
+                        </div>
+                      </div>
+
+		      <!--<div class="row">
+                        <div class="input-field col s12">
+                          <i class="mdi-action-question-answer prefix"></i>
+                          <textarea id="description" class="materialize-textarea validate" length="120"></textarea>
+                          <label for="description">Description</label>
+                        </div>
+                      </div>-->
+
+
+
+		      <div class="row">
+
+		      <div class="row">
+			<div class="input-field col s1"></div>
+		        <div class="input-field col s11">
+		            <div class="file-field">
+		              <div class="btn">
+		                <span>File</span>
+		                <input type="file">
+		              </div>
+		              <div class="file-path-wrapper">
+		                <input class="file-path validate" type="text">
+		              </div>
+		            </div>
+		        </div>
+		      </div>
+
+              <div class="row">
+                  <div class="input-field col s12">
+                      <input type="checkbox" id="sub_departments"/>
+                      <label for="sub_departments">Sub Departments</label>
+                  </div>
+              </div>
+
+                  <div class="row">
+                      <div class="input-field col s1"></div>
+                      <div class="input-field col s11" id="departments" style="display: none;">
+                          <select id="selectDropdownDept">
+                              <option value="" disabled selected>Select the Department</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="row">&nbsp;</div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <button class="btn cyan waves-effect waves-light right" type="button" name="submitOne" id="submitOne" style="display: none">
+                          </button>
+                        <button class="btn cyan waves-effect waves-light right" type="button" name="action" id="createDepartmentBtn">Submit
+                          <i class="mdi-content-send right"></i>
+                        </button>
+                      </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+	</div>
+    <script type="text/javascript" src="../js/create_department.js"></script>
+        <script>
+		$('select').material_select();
+
+	</script>
+

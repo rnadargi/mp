@@ -1,0 +1,210 @@
+<style>
+    .saveCont{
+        width: 100%;
+        /* height: 100%; */
+        /* background-color: #000000; */
+        opacity: 0.9;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        z-index: 1000;
+    }
+    .saveHeaderDiv{
+        background-color: #009688;
+        text-align: center;
+        padding: 15px;
+        height: 85px;
+        color: #FFFFFF;
+    }
+
+</style>
+<div class="modal saveCont" id="saveUserModal" style="display: none">
+    <div class="modal-content saveHeaderDiv"><h4>User Saved Successfully.</h4></div>
+</div>
+<form id="frm" name="frm" class="right-alert">
+    <div class="row">
+      <div class="col s12 m12 l8 offset-l2">
+        <div class="card-panel">
+          <h4 class="header2">Create User</h4>
+          <div class="row">
+            <div class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input id="first_name" type="text" class="validate" data-error=".errorfirst_name" required="true" maxlength="20" minlength="3">
+                    <label for="first_name">First Name</label>
+                    <div class="errorfirst_name"></div>
+                </div>
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate" required="true" maxlength="20" minlength="3">
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+                <div class="row">
+                    <div class="input-field col s11">
+                      <i class="mdi-action-lock-outline prefix"></i>
+                      <input id="password" type="password" class="validate" maxlength="20" required="true">
+                      <label for="password">Password</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <i class="mdi-communication-vpn-key prefix bindthis" style="cursor:pointer;" title="Generate a password" id="generatePassword"></i>
+                    </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="mdi-communication-email prefix"></i>
+                  <input id="email" name="email" type="email" class="validate" required="true">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="mdi-hardware-phone-iphone prefix"></i>
+                        <input id="mobile" type="number" class="validate" maxlength="12" minlength="10">
+                        <label for="mobile">Mobile</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="mdi-action-account-circle prefix"></i>
+                        <input id="user_code" type="text" class="validate" maxlength="6" required="true">
+                        <label for="user_code">User Code</label>
+                    </div>
+                </div>
+
+      <div class="row">
+      <div class="input-field col s1"></div>
+          <div class="input-field col s11 " id="usersList">
+            <select id="userRoleList">
+              <option value="" disabled selected>Select the role</option>
+            </select>
+            <!--<label>Role</label>-->
+          </div>
+      </div>
+
+    <!--<div class="row">
+        <div class="input-field col s1"></div>
+        <div id="departments" class="input-field col s11" style="display: none">
+            <select id="selectDropdownDept">
+                <option value="" disabled selected>Select the Department</option>
+            </select>
+        </div>
+    </div>-->
+
+    <div id="deptDiv" class="row" style="display: none; margin-top: 20px;">
+        <div class="input-field col s1" style="margin-left: 12px;"></div>
+        <h6>Select Sub Departments</h6>
+        <div class="input-field col s1"></div>
+        <div id="mainDepartments" class="input-field col s11" style="top: -10px; height: 150px; overflow-y: auto; overflow-x: hidden;">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s1"></div>
+        <div id="departmentList" class="input-field col s11" style="display: none">
+            <ul id="deptAccordianList" class="collapsible col m12" data-collapsible="accordion" >
+                <!--<li>
+                    <div class="collapsible-header">Program 1</div>
+                    <div class="collapsible-body col s12" style="padding-bottom: 25px;">
+                        <div class="col m12">
+                            <div class="col m1">&nbsp;</div>
+                            <div class="col m11">
+                                <input type="checkbox" id="1"/>
+                                <label for="1">Maths</label>
+                            </div>
+                        </div>
+                        <div class="col m12">
+                            <div class="col m1">&nbsp;</div>
+                            <div class="col m11">
+                                <input type="checkbox" id="2"/>
+                                <label for="2">Science</label>
+                            </div>
+                        </div>
+                        <div class="col m12">
+                            <div class="col m1">&nbsp;</div>
+                            <div class="col m11">
+                                <input type="checkbox" id="3"/>
+                                <label for="3">English</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Program 1</div>
+                    <div class="collapsible-body col s12" style="padding-bottom: 25px;">
+                        <div class="col m12">
+                            <div class="col m1">&nbsp;</div>
+                            <div class="col m11">
+                                <input type="checkbox" id="4"/>
+                                <label for="4">Maths</label>
+                            </div>
+                        </div>
+                        <div class="col m12">
+                            <div class="col m1">&nbsp;</div>
+                            <div class="col m11">
+                                <input type="checkbox" id="5"/>
+                                <label for="5">Science</label>
+                            </div>
+                        </div>
+                        <div class="col m12">
+                            <div class="col m1">&nbsp;</div>
+                            <div class="col m11">
+                                <input type="checkbox" id="6"/>
+                                <label for="6">English</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>-->
+
+
+            </ul>
+
+        </div>
+    </div>
+
+      <!--<div class="row">
+    <div class="input-field col s1"></div>
+    <div class="input-field col s3">
+        <label for="genter_select">Gender</label>
+    </div>
+    <div class="input-field col s4">
+                      <input name="cgender" type="radio" id="gender_male" data-error=".errorTxt8"/>
+                      <label for="gender_male">Male</label>
+                </div>
+    <div class="input-field col s4">
+                      <input name="cgender" type="radio" id="gender_female" value="f"/>
+                      <label for="gender_female">Female</label>
+    </div>
+              </div>-->
+
+
+
+              <div class="row">&nbsp;</div>
+              <div class="row">
+                  <div class="input-field col s12">
+                      <!--<button class="btn cyan waves-effect waves-light right" type="button" name="submitUserOne" id="submitUserOne" style="display: none">
+                      </button>-->
+                    <button class="btn cyan waves-effect waves-light right" id="createUserBtn">Submit
+                      <i class="mdi-content-send right"></i>
+                    </button>
+                  </div>
+                </div>
+                <input type="hidden" id="isCreateUser" value="true"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	</div>
+</form>
+<script type="text/javascript" src="/surveksan/js/create_users.js"></script>
+        <script>
+		$('select').material_select();
+        $(document).ready(function(){
+        $('.collapsible').collapsible({
+          accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+          });
+        });
+
+
+	</script>
